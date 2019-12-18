@@ -8,9 +8,9 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 class TestClass {
-    @DisplayName("Right Form")
+    @DisplayName("Successful test with correctly form")
     @Test
-    void TestCardRightForm() throws InterruptedException {
+    void testCardCorrectlyForm()throws InterruptedException {
         open("http://localhost:9999");
         SelenideElement form = $("form");
         form.$("[data-test-id=name] input").setValue("Даньшин Алексей");
@@ -23,9 +23,9 @@ class TestClass {
         Thread.sleep(5000);
     }
 
-    @DisplayName("Wrong Name")
+    @DisplayName("Should show error if name in english")
     @Test
-    void TestCardWrongName() throws InterruptedException {
+    void shouldShowErrorIfNameInEnglish()throws InterruptedException {
         open("http://localhost:9999");
         SelenideElement form = $("[class= \"form form_size_m " +
                 "form_theme_alfa-on-white\"]");
